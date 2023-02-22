@@ -29,7 +29,31 @@ const juanita = new Student(
         "Curso de Introducción a los Vidoejuegos",
         "Curso de Creación de Personal",
     ],
-)
+);
 
-// Hacer que natalia apruebe orto curso
-natalia.cursosAprobados. push("Curso de Responsive Design");
+
+
+// Prototipos con la sintaxis de clases
+class Student2 {
+    constructor({
+        name,
+        age,
+        email,
+        cursosAprobados = [],
+    }) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+        this.cursosAprobados = cursosAprobados;
+    }
+    aprobarCurso(nuevoCursito) {
+        this.cursosAprobados.push(nuevoCursito);
+    }
+}
+
+const miguelito = new Student2({
+    email: "miguelito@platzi.com",
+    name: "Miguel",
+    age: 27,
+}
+)
