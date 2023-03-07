@@ -20,6 +20,7 @@ export class PlatziClass {
     videoPlay(this.videoID);
   }
   pausar() {
+    videoStop(this.videoID);
 
   }
 }
