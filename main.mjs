@@ -1,12 +1,55 @@
-class Course {
-  constructor({ name, classes = [] }) {
+function videoPlay(id) {
+  const urlSecreta = "http://www.esteesellink.com/" + id
+  console.log("Se está reproduciendo desde la url" + urlSecreta);
+}
+
+function videoStop(id) {
+  const urlSecreta = "http://www.esteesellink.com/" + id
+  console.log("Pausamos la url" + urlSecreta);
+}
+
+export class PlatziClass {
+  constructor({
+    name,
+    videoID,
+  }) {
     this.name = name;
-    this.classes = classes;
+    this.videoID = videoID;
+  }
+  reproducir() {
+    videoPlay(this.videoID);
+  }
+  pausar() {
+
   }
 }
+
+class Course {
+  constructor({ name, classes = [] }) {
+    this._name = name;
+    this.classes = classes;
+  }
+
+  get name() {
+    return this._name;
+  }
+  set name(nuevoNombre) {
+    if (nuevoNombre === "Curso Malito de Programación Básica") {
+      console.error("no, asi no")
+    } else {
+      this._name = nuevoNombre;
+    }
+  }
+}
+
 const cursoProgBasica = new Course({
   name: "Curso Gratis de Programación Básica",
 });
+
+// cursoProgBasica.name = ""
+// //Curso Gratis de Programación Básica
+// cursoProgBasica.changeName("")
+
 const cursoDefinitivoHTML = new Course({
   name: "Curso Definitivo de HTML y CSS",
 });
